@@ -2,21 +2,13 @@
 
 ## Sobre o Projeto
 
-Este repositório contém um **mapa mental em formato de flowchart (Mermaid)** desenvolvido como trabalho final da disciplina optativa **"Inteligência Artificial, Imagens Sintéticas e Resistência"** do curso de Estética da Filosofia da **Universidade Federal de Minas Gerais (UFMG)**.
+Este repositório contém um **mapa mental em formato de flowchart (Mermaid)** desenvolvido como trabalho final da disciplina optativa **"Filosofia Estética - Inteligência Artificial, Imagens Sintéticas e Resistência"** do curso de Filosofia da **Universidade Federal de Minas Gerais (UFMG)**.
 
 O objetivo do trabalho foi criar uma **cartografia da Inteligência Artificial**, explorando de forma visual e conceitual as diversas dimensões, implicações e reflexões filosóficas sobre a IA contemporânea.
 
-## 📚 Contexto Acadêmico
-
-- **Instituição:** Universidade Federal de Minas Gerais (UFMG)
-- **Disciplina:** Inteligência Artificial, Imagens Sintéticas e Resistência
-- **Área:** Estética da Filosofia
-- **Tipo:** Disciplina Optativa
-- **Formato do Trabalho:** Cartografia/Mapa Mental
-
 ## 🗺️ O que é uma Cartografia da IA?
 
-A cartografia, neste contexto, é uma ferramenta conceitual que permite mapear e visualizar as múltiplas conexões, tensões e relações que envolvem a Inteligência Artificial. Diferente de um mapa tradicional, a cartografia filosófica busca:
+A cartografia, neste contexto, é uma ferramenta conceitual que permite mapear e visualizar as múltiplas conexões, tensões e relações que envolvem a Inteligência Artificial. 
 
 - Revelar relações não-óbvias entre conceitos
 - Explorar dimensões éticas, estéticas e políticas da IA
@@ -29,7 +21,7 @@ O mapa mental foi desenvolvido utilizando **Mermaid**, uma linguagem de diagrama
 
 ### Como visualizar o diagrama
 
-O diagrama Mermaid pode ser visualizado de várias formas:
+O diagrama Mermaid pode ser visualizado da seguinte formas:
 
 1. **GitHub:** O GitHub renderiza automaticamente diagramas Mermaid em arquivos Markdown
 2. **VS Code:** Utilize extensões como "Markdown Preview Mermaid Support"
@@ -54,18 +46,7 @@ O diagrama Mermaid pode ser visualizado de várias formas:
 ```
 mental-mind-ia/
 └── README.md          # Documentação do projeto
+└── mental-mind-ia.mermaid          # Mapa mental
+
+
 ```
-
-> **Nota:** Os arquivos contendo o flowchart Mermaid da cartografia da IA serão adicionados ao repositório.
-
-## 📝 Licença
-
-Este projeto é de caráter acadêmico e foi desenvolvido para fins educacionais.
-
-## 👤 Autor
-
-Desenvolvido como trabalho acadêmico para a UFMG.
-
----
-
-*"A cartografia é a arte de representar o mundo, mas também de imaginar outros mundos possíveis."*
