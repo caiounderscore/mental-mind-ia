@@ -1,0 +1,117 @@
+flowchart TD
+    %% === NÍVEL CENTRAL ===
+    TERRA["🌍 TERRA<br/>Ciclos de matéria, energia, água,<br/>vida, saberes, criatividade"]
+    
+    %% === MACROCICLO E DIVISÃO NORTE-SUL ===
+    MACROCICLO[MACROCICLO]
+    SUL["🌎 SUL GLOBAL<br/>Territórios, povos, ecossistemas,<br/>saberes, criatividade"]
+    NORTE["🌐 NORTE GLOBAL<br/>Capital, Big Tech, VCs,<br/>think tanks, complexo industrial-midiático"]
+    
+    %% === FLUXOS DE DOMINAÇÃO ===
+    DOMINACAO[FLUXOS DE DOMINAÇÃO<br/>colonialidade, dívida,<br/>dependência tecnológica]
+    
+    %% === CADEIA DE EXTRAÇÃO E PRODUÇÃO ===
+    EXT_NAT["⛏️ 1.1 EXTRAÇÃO DE RECURSOS NATURAIS<br/>minérios: cobre, ouro, lítio, cobalto<br/>água, terra, biodiversidade"]
+    EXT_INT["💾 1.2 CAPTURA DE RECURSOS INTANGÍVEIS<br/>dados via web scraping,<br/>PI, saberes culturais"]
+    CADEIAS["🏭 CADEIAS OPAQUEADAS<br/>intermediários, trabalho informal,<br/>conflitos fundiários"]
+    MANUFATURA["🏭 2. MANUFATURA GLOBAL<br/>foundries de chips<br/>TSMC, ASML, Nvidia"]
+    HARDWARE["⚙️ HARDWARE & CLOUD<br/>GPUs, DCs, redes,<br/>infraestrutura crítica"]
+    
+    %% === MODELOS E TRABALHO ===
+    TREINAMENTO["📊 3.1 TREINAMENTO DOS MODELOS<br/>conjuntos de dados massivos,<br/>energia intensiva, emissões"]
+    MODELOS["🤖 MODELOS ESTATÍSTICOS<br/>LLMs, modelos de difusão, RLHF"]
+    TRABALHO["👷 3.2 TRABALHO INVISIBILIZADO<br/>microtrabalho no Sul<br/>fine-tuning, moderação<br/>saúde mental, precariedade"]
+    AFINAMENTO["🎯 4. AFINAMENTO<br/>rotulação, avaliação de respostas"]
+    FILTRAGEM["🚫 4.1 FILTRAGEM<br/>conteúdo tóxico no Sul Global"]
+    
+    %% === PRODUTOS E MERCADO ===
+    PRODUTOS["💬 PRODUTOS/INTERFACES<br/>ChatGPT, Midjourney, Copilot, APIs"]
+    MERCADO["💰 5. MERCADO & USO<br/>substituição de tarefas criativas,<br/>automação do trabalho cognitivo"]
+    
+    %% === INFRAESTRUTURA E ENERGIA ===
+    COMPUTACAO["🔋 6. INFRAESTRUTURA DE<br/>COMPUTAÇÃO INTENSIVA<br/>Datacenters: energia, calor, água<br/>0.3-2% das emissões globais"]
+    ENERGIA["⚡ ENERGIA & EMISSÕES<br/>matriz fóssil, diesel backup<br/>parcerias com petróleo e gás"]
+    COMPENSACOES["🌳 6.1 COMPENSAÇÕES DE CARBONO<br/>em terras indígenas,<br/>conflitos por uso da terra"]
+    RESFRIAMENTO["💧 RESFRIAMENTO & ÁGUA<br/>4-9 L/kWh, stress hídrico<br/>conflitos com comunidades"]
+    
+    %% === RESÍDUOS E IMPACTOS ===
+    RESIDUOS["🗑️ 8. RESÍDUOS ELETRÔNICOS<br/>baterias, servidores, gadgets<br/>e-waste exportado para<br/>lixões no Sul: Agbogbloshie"]
+    CONTAMINACAO["☣️ CONTAMINAÇÃO & SAÚDE<br/>solo, água, ar<br/>metais pesados,<br/>riscos para recicladores"]
+    CONFLITOS["⚖️ 9. CONFLITOS & JUSTIÇA AMBIENTAL<br/>comunidades locais,<br/>terras indígenas,<br/>violação de direitos"]
+    IMPACTOS["🌡️ IMPACTOS SISTÊMICOS<br/>aquecimento global,<br/>perda de biodiversidade,<br/>desigualdades"]
+    
+    %% === DISCURSOS E PODER ===
+    DISCURSOS["📢 DISCURSOS PÚBLICOS<br/>alarmismo de risco existencial,<br/>autorregulação, desinformação"]
+    ESCALA["📈 7. ESCALA & PRIVATIZAÇÃO<br/>concentração em Big Tech,<br/>modelos fechados, barreiras<br/>de entrada, hype especulativo"]
+    CONTRAPODER["🛡️ CONTRAPODER &<br/>CONTRA-MAPEAMENTO<br/>regulação: Lei de IA,<br/>due diligence, transparência"]
+    
+    %% === ALTERNATIVAS ===
+    ALTERNATIVAS["💡 10. ALTERNATIVAS & SAÍDAS<br/>redução de demanda,<br/>design para reparo/reuso,<br/>modelos eficientes e abertos"]
+    
+    %% === CONEXÕES PRINCIPAIS ===
+    TERRA --> MACROCICLO
+    MACROCICLO --> SUL
+    MACROCICLO --> NORTE
+    SUL -.->|sobre| DOMINACAO
+    DOMINACAO -.->|sobre| NORTE
+    
+    %% CADEIA DE PRODUÇÃO
+    SUL --> EXT_NAT
+    NORTE --> EXT_INT
+    EXT_NAT --> CADEIAS
+    CADEIAS --> MANUFATURA
+    MANUFATURA --> HARDWARE
+    EXT_INT --> HARDWARE
+    
+    %% MODELOS E TRABALHO
+    HARDWARE --> TREINAMENTO
+    TREINAMENTO --> MODELOS
+    MODELOS --> AFINAMENTO
+    AFINAMENTO --> TRABALHO
+    AFINAMENTO --> FILTRAGEM
+    TRABALHO --> FILTRAGEM
+    
+    %% PRODUTOS
+    MODELOS --> PRODUTOS
+    PRODUTOS --> MERCADO
+    
+    %% INFRAESTRUTURA
+    MERCADO --> COMPUTACAO
+    COMPUTACAO --> ENERGIA
+    COMPUTACAO --> RESFRIAMENTO
+    ENERGIA --> COMPENSACOES
+    
+    %% RESÍDUOS E IMPACTOS
+    COMPUTACAO --> RESIDUOS
+    RESIDUOS --> CONTAMINACAO
+    CONTAMINACAO --> CONFLITOS
+    CONFLITOS --> IMPACTOS
+    
+    %% DISCURSOS E PODER
+    MERCADO --> DISCURSOS
+    NORTE --> ESCALA
+    IMPACTOS --> CONTRAPODER
+    
+    %% ALTERNATIVAS E FECHAMENTO
+    IMPACTOS --> ALTERNATIVAS
+    ALTERNATIVAS --> TERRA
+    
+    %% FLUXOS CRUZADOS
+    NORTE -->|tecnologia| SUL
+    SUL -->|recursos| NORTE
+    SUL -->|trabalho| NORTE
+    NORTE -->|resíduos| SUL
+    NORTE -->|discursos| SUL
+    
+    %% ESTILOS
+    classDef terra fill:#2E8B57,color:white,stroke:#1A5276,stroke-width:2px
+    classDef sul fill:#8B4513,color:white,stroke:#654321
+    classDef norte fill:#1E90FF,color:white,stroke:#00008B
+    classDef impacto fill:#FF4500,color:white,stroke:#8B0000
+    classDef solucao fill:#32CD32,color:black,stroke:#006400
+    
+    class TERRA terra
+    class SUL sul
+    class NORTE norte
+    class IMPACTOS,CONFLITOS,CONTAMINACAO impacto
+    class ALTERNATIVAS,CONTRAPODER solucao
