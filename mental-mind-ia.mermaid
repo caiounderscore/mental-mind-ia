@@ -28,8 +28,19 @@ flowchart TD
     PRODUTOS["💬 PRODUTOS/INTERFACES<br/>ChatGPT, Midjourney, Copilot, APIs"]
     MERCADO["💰 5. MERCADO & USO<br/>substituição de tarefas criativas,<br/>automação do trabalho cognitivo"]
     
+    %% === CULTURA 24/7 DESMEMBRADA ===
+    CULTURA247["⏰ CULTURA 24/7<br/>Expectativa de disponibilidade constante<br/>Normalização da aceleração"]
+    
+    DISPONIBILIDADE["🌐 DISPONIBILIDADE CONSTANTE<br/>Servidores sempre ativos<br/>Resposta instantânea esperada<br/>Infraestrutura sem pausas"]
+    
+    PRODUCAO_DADOS["📈 PRODUÇÃO CONTÍNUA<br/>de DADOS<br/>Cada interação gera<br/>novos dados de treino<br/>Conteúdo sintético alimenta<br/>próximas gerações de IA"]
+    
+    PRESSAO_TEMPORAL["⚡ PRESSÃO TEMPORAL<br/>Burnout humano vs.<br/>IA sempre produtiva<br/>Ritmos naturais substituídos<br/>por lógica algorítmica"]
+    
+    FEEDBACK_LOOP["🔄 FEEDBACK LOOP<br/>Mais uso → Mais dados →<br/>Melhores modelos →<br/>Mais dependência →<br/>Mais uso"]
+    
     %% === INFRAESTRUTURA E ENERGIA ===
-    COMPUTACAO["🔋 6. INFRAESTRUTURA DE<br/>COMPUTAÇÃO INTENSIVA<br/>Datacenters: energia, calor, água<br/>0.3-2% das emissões globais"]
+    COMPUTACAO["🔋 6. INFRAESTRUTURA DE<br/>COMPUTAÇÃO INTENSIVA<br/>Datacenters: energia, calor, água<br/>"]
     ENERGIA["⚡ ENERGIA & EMISSÕES<br/>matriz fóssil, diesel backup<br/>parcerias com petróleo e gás"]
     COMPENSACOES["🌳 6.1 COMPENSAÇÕES DE CARBONO<br/>em terras indígenas,<br/>conflitos por uso da terra"]
     RESFRIAMENTO["💧 RESFRIAMENTO & ÁGUA<br/>4-9 L/kWh, stress hídrico<br/>conflitos com comunidades"]
@@ -45,8 +56,8 @@ flowchart TD
     ESCALA["📈 7. ESCALA & PRIVATIZAÇÃO<br/>concentração em Big Tech,<br/>modelos fechados, barreiras<br/>de entrada, hype especulativo"]
     CONTRAPODER["🛡️ CONTRAPODER &<br/>CONTRA-MAPEAMENTO<br/>regulação: Lei de IA,<br/>due diligence, transparência"]
     
-    %% === ALTERNATIVAS ===
-    ALTERNATIVAS["💡 10. ALTERNATIVAS & SAÍDAS<br/>redução de demanda,<br/>design para reparo/reuso,<br/>modelos eficientes e abertos"]
+    %% === LEGADO TÓXICO ===
+    LEGADO["💀 10. LEGADO TÓXICO &<br/>COLONIALISMO DIGITAL<br/>Descarte massivo em solos e rios<br/>Metais pesados na cadeia alimentar<br/>Futuro geológico contaminado"]
     
     %% === CONEXÕES PRINCIPAIS ===
     TERRA --> MACROCICLO
@@ -71,12 +82,33 @@ flowchart TD
     AFINAMENTO --> FILTRAGEM
     TRABALHO --> FILTRAGEM
     
-    %% PRODUTOS
+    %% PRODUTOS E CULTURA 24/7
     MODELOS --> PRODUTOS
     PRODUTOS --> MERCADO
+    MERCADO --> CULTURA247
+    
+    %% CULTURA 24/7 DESMEMBRADA - CONEXÕES
+    CULTURA247 --> DISPONIBILIDADE
+    CULTURA247 --> PRESSAO_TEMPORAL
+    CULTURA247 --> PRODUCAO_DADOS
+    CULTURA247 --> FEEDBACK_LOOP
+    
+    DISPONIBILIDADE --> COMPUTACAO
+    PRESSAO_TEMPORAL --> TRABALHO
+    PRODUCAO_DADOS --> EXT_INT
+    PRODUCAO_DADOS --> TREINAMENTO
+    
+    FEEDBACK_LOOP -->|alimenta| CULTURA247
+    FEEDBACK_LOOP -->|justifica| ESCALA
+    
+    %% FEEDBACK LOOP DETALHADO
+    PRODUCAO_DADOS -->|dados para| TREINAMENTO
+    TREINAMENTO -->|modelos melhores| MODELOS
+    MODELOS -->|produtos melhores| PRODUTOS
+    PRODUTOS -->|mais uso| MERCADO
+    MERCADO -->|mais dados| PRODUCAO_DADOS
     
     %% INFRAESTRUTURA
-    MERCADO --> COMPUTACAO
     COMPUTACAO --> ENERGIA
     COMPUTACAO --> RESFRIAMENTO
     ENERGIA --> COMPENSACOES
@@ -92,9 +124,13 @@ flowchart TD
     NORTE --> ESCALA
     IMPACTOS --> CONTRAPODER
     
-    %% ALTERNATIVAS E FECHAMENTO
-    IMPACTOS --> ALTERNATIVAS
-    ALTERNATIVAS --> TERRA
+    %% LEGADO TÓXICO
+    IMPACTOS --> LEGADO
+    RESIDUOS --> LEGADO
+    CONTAMINACAO --> LEGADO
+    CONFLITOS --> LEGADO
+    COMPUTACAO -->|acelera| LEGADO
+    LEGADO --> TERRA
     
     %% FLUXOS CRUZADOS
     NORTE -->|tecnologia| SUL
@@ -108,10 +144,14 @@ flowchart TD
     classDef sul fill:#8B4513,color:white,stroke:#654321
     classDef norte fill:#1E90FF,color:white,stroke:#00008B
     classDef impacto fill:#FF4500,color:white,stroke:#8B0000
-    classDef solucao fill:#32CD32,color:black,stroke:#006400
+    classDef toxico fill:#8B0000,color:white,stroke:#000000,stroke-width:3px
+    classDef cultura fill:#FF8C00,color:black,stroke:#FF4500
+    classDef feedback fill:#32CD32,color:black,stroke:#006400
     
     class TERRA terra
     class SUL sul
     class NORTE norte
     class IMPACTOS,CONFLITOS,CONTAMINACAO impacto
-    class ALTERNATIVAS,CONTRAPODER solucao
+    class LEGADO toxico
+    class CULTURA247,DISPONIBILIDADE,PRESSAO_TEMPORAL,PRODUCAO_DADOS cultura
+    class FEEDBACK_LOOP feedback
